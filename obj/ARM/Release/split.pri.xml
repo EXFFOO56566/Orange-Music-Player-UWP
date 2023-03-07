@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="TochyComputerServices.OrangeMusicPlayer" version="1.0" primary="true">
+		<Qualifiers>
+			<AlternateForm>UNPLATED</AlternateForm>
+			<Language>EN-US</Language>
+			<Scale>200</Scale>
+			<TargetSize>24</TargetSize>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/App.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="e_sqlite3.dll" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/e_sqlite3.dll">
+				<Candidate type="Path">
+					<Value>e_sqlite3.dll</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="OrangeMusicPlayer.xr.xml" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/OrangeMusicPlayer.xr.xml">
+				<Candidate type="Path">
+					<Value>OrangeMusicPlayer.xr.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="PlayerView.xbf" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/PlayerView.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="Default-Cover.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/Default-Cover.png">
+					<Candidate type="Path">
+						<Value>Assets\Default-Cover.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LockScreenLogo.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/LockScreenLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\LockScreenLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/SplashScreen.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\SplashScreen.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square150x150Logo.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/Square150x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square150x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square44x44Logo.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/Square44x44Logo.png">
+					<Candidate qualifiers="TargetSize-24, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/StoreLogo.png">
+					<Candidate type="Path">
+						<Value>Assets\StoreLogo.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Assets/Wide310x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Wide310x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Properties">
+				<NamedResource name="Default.rd.xml" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/Properties/Default.rd.xml">
+					<Candidate type="Path">
+						<Value>Properties\Default.rd.xml</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinMetadata">
+				<NamedResource name="Windows.winmd" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Files/WinMetadata/Windows.winmd">
+					<Candidate type="Path">
+						<Value>WinMetadata\Windows.winmd</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Microsoft.Data.Sqlite.Properties.Resources">
+			<NamedResource name="AlreadyLoaded" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/AlreadyLoaded">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The SQLite library is already loaded. UseWinSqlite3 must be called before using SQLite.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="AmbiguousParameterName" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/AmbiguousParameterName">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Cannot bind the value for parameter '{parameterName}' because multiple matching parameters were found in the command text. Specify the parameter name with the symbol prefix, e.g. '@{parameterName}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CallRequiresOpenConnection" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/CallRequiresOpenConnection">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>{methodName} can only be called when the connection is open.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CallRequiresSetCommandText" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/CallRequiresSetCommandText">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>CommandText must be set before {methodName} can be called.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="CannotStoreNaN" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/CannotStoreNaN">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Cannot store 'NaN' values.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ConnectionStringRequiresClosedConnection" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/ConnectionStringRequiresClosedConnection">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>ConnectionString cannot be set when the connection is open.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ConvertFailed" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/ConvertFailed">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Cannot convert object of type '{sourceType}' to object of type '{targetType}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DataReaderClosed" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/DataReaderClosed">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Invalid attempt to call {operation} when reader is closed.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="DefaultNativeError" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/DefaultNativeError">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>For more information on this error code see http://sqlite.org/rescode.html</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCacheMode" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/InvalidCacheMode">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The cache mode '{mode}' is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCommandBehavior" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/InvalidCommandBehavior">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The CommandBehavior '{behavior}' is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidCommandType" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/InvalidCommandType">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The CommandType '{commandType}' is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidEnumValue" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/InvalidEnumValue">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The {enumType} enumeration value, {value}, is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidIsolationLevel" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/InvalidIsolationLevel">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The IsolationLevel '{isolationLevel}' is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="InvalidParameterDirection" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/InvalidParameterDirection">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The ParameterDirection '{direction}' is invalid.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="KeywordNotSupported" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/KeywordNotSupported">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Keyword not supported: '{keyword}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MissingParameters" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/MissingParameters">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Must add values for the following parameters: {parameters}</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="NoData" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/NoData">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>No data exists for the row/column.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="OpenRequiresSetConnectionString" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/OpenRequiresSetConnectionString">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>ConnectionString must be set before Open can be called.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ParallelTransactionsNotSupported" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/ParallelTransactionsNotSupported">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>SqliteConnection does not support nested transactions.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="ParameterNotFound" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/ParameterNotFound">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>A SqliteParameter with ParameterName '{parameterName}' is not contained by this SqliteParameterCollection.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="RequiresSet" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/RequiresSet">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>{propertyName} must be set.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="SqliteNativeError" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/SqliteNativeError">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>SQLite Error {errorCode}: '{message}'.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TransactionCompleted" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/TransactionCompleted">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>This SqliteTransaction has completed; it is no longer usable.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TransactionConnectionMismatch" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/TransactionConnectionMismatch">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>The transaction object is not associated with the connection object.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="TransactionRequired" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/TransactionRequired">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>Execute requires the command to have a transaction object when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="UnknownDataType" uri="ms-resource://TochyComputerServices.OrangeMusicPlayer/Microsoft.Data.Sqlite.Properties.Resources/UnknownDataType">
+				<Candidate qualifiers="Language-EN-US" isDefault="true" type="String">
+					<Value>No mapping exists from object type {typeName} to a known managed provider native type.</Value>
+				</Candidate>
+			</NamedResource>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

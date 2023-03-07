@@ -1,0 +1,21 @@
+[ResourceMetadata]
+"ResourceDimensions"		"language-en-us"
+"ResourceDimensions"		"scale-200"
+"ResourceDimensions"		"language-en-US"
+
+[Files]
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\split.pri"			"resources.pri"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\TagLibUWP.winmd"			"TagLibUWP.winmd"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\TagLibUWP.dll"			"TagLibUWP.dll"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\OrangeMusicPlayer.exe"			"OrangeMusicPlayer.exe"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\OrangeMusicPlayer.dll"			"OrangeMusicPlayer.dll"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\e_sqlite3.dll"			"e_sqlite3.dll"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\clrcompression.dll"			"clrcompression.dll"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\Wide310x150Logo.scale-200.png"			"Assets\Wide310x150Logo.scale-200.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\StoreLogo.png"			"Assets\StoreLogo.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\Square44x44Logo.targetsize-24_altform-unplated.png"			"Assets\Square44x44Logo.targetsize-24_altform-unplated.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\Square44x44Logo.scale-200.png"			"Assets\Square44x44Logo.scale-200.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\Square150x150Logo.scale-200.png"			"Assets\Square150x150Logo.scale-200.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\SplashScreen.scale-200.png"			"Assets\SplashScreen.scale-200.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\LockScreenLogo.scale-200.png"			"Assets\LockScreenLogo.scale-200.png"
+"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\PackageLayout\Assets\Default-Cover.png"			"Assets\Default-Cover.png"

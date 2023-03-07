@@ -1,0 +1,2 @@
+MainPackage=C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\bin\ARM\Release\OrangeMusicPlayer_1.0.2.0_ARM.appx
+SymbolPackage=C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\ARM\Release\Symbols\OrangeMusicPlayer_1.0.2.0_ARM.appxsym

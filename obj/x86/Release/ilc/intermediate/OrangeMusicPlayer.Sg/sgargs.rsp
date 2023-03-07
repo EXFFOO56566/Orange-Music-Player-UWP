@@ -1,0 +1,12 @@
+/ref:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\spider\.nuget\packages\microsoft.net.native.sharedlibrary-x86\2.0.0\tools\SharedLibrary\ret\AnalysisILToc"
+/ref:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\in\\"
+/ref:"C:\Users\spider\.nuget\packages\microsoft.net.native.compiler\2.0.2\tools\x86\ilc\lib\Private\\"
+/ref:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\in"
+/ref:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Users\spider\.nuget\packages\microsoft.net.native.compiler\2.0.2\tools\csc"
+/out:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\intermediate\OrangeMusicPlayer.Sg"
+"@C:\Users\spider\Desktop\PROJECTS\MICROSOFT\ORANGE MUSIC PLAYER\OrangeMusicPlayer\OrangeMusicPlayer\obj\x86\Release\ilc\intermediate\OrangeMusicPlayer.Sg\ComputedSerializationInput.txt"

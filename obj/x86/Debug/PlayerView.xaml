@@ -1,0 +1,364 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Orange_Music_Player.PlayerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Orange_Music_Player"
+    xmlns:oe="using:Orange_Music_Player.AttachedProperties"
+    xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
+    xmlns:oconverters="using:Orange_Music_Player.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        
+        <converters:BoolNegationConverter x:Key="BoolNegationConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converters:BoolToObjectConverter x:Key="BoolToVisibilityInversionConverter" TrueValue="Collapsed" FalseValue="Visible"/>
+        <converters:BoolToObjectConverter x:Key="BoolToOpacityConverter" TrueValue="1.0" FalseValue="0.3"/>
+        <converters:EmptyStringToObjectConverter x:Key="EmptyStringToBoolConverter" EmptyValue="False" NotEmptyValue="True"/>
+        <converters:EmptyStringToObjectConverter x:Key="EmptyStringToHiddenConverter" EmptyValue="Collapsed" NotEmptyValue="Visible"/>
+        <converters:EmptyCollectionToObjectConverter x:Key="EmptyCollectionToHiddenConverter" EmptyValue="Collapsed" NotEmptyValue="Visible"/>
+        <converters:EmptyObjectToObjectConverter x:Key="EmptyObjectToHiddenConverter" EmptyValue="Collapsed" NotEmptyValue="Visible"/>
+        <oconverters:PlayingToSymbolConverter x:Key="PlayingToSymbolConverter"/>
+        <oconverters:ZeroModeToOpacityConverter x:Key="ZeroModeToOpacityConverter"/>
+        <oconverters:RepeatModeToSymbolConverter x:Key="RepeatModeToSymbolConverter"/>
+
+        <Style x:Key="PlaylistPanel" TargetType="RelativePanel">
+            <Setter Property="Padding" Value="52,12,0,52"/>
+            <Setter Property="RelativePanel.AlignTopWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignLeftWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignRightWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignBottomWith" Value="Transport"/>
+        </Style>
+        <Style x:Key="NowPlayingPanel" TargetType="Grid">
+            <Setter Property="Padding" Value="12,0"/>
+        </Style>
+        <Style x:Key="CoverImageStyle" TargetType="Image">
+            <Setter Property="Width" Value="375"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="NowPlayingDetail" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style x:Key="PlaylistListView" TargetType="ListView">
+            <Setter Property="RelativePanel.RightOf" Value="PlaylistHeaderAndImageContainer"/>
+            <Setter Property="RelativePanel.AlignRightWithPanel" Value="True"/>
+            <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundChromeBlackHighBrush}"/>
+            <Setter Property="CanDragItems" Value="True"/>
+            <Setter Property="CanReorderItems" Value="True"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto"/>
+        </Style>
+        <Style x:Key="PlaylistItemDetail" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style x:Key="FileMenuView" TargetType="SplitView">
+            <Setter Property="DisplayMode" Value="CompactOverlay"/>
+            <Setter Property="CompactPaneLength" Value="52"/>
+            <Setter Property="OpenPaneLength" Value="350"/>
+            <Setter Property="PaneBackground" Value="Transparent"/>
+            <Setter Property="PanePlacement" Value="Left"/>
+            <Setter Property="RelativePanel.AlignTopWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignLeftWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.Above" Value="Transport"/>
+        </Style>
+        <Style x:Key="FileMenuItem" TargetType="AppBarButton">
+            <Setter Property="Width" Value="52"/>
+            <Setter Property="LabelPosition" Value="Collapsed"/>
+        </Style>
+        <Style x:Key="AvailablePlaylistsItem" TargetType="Grid">
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="12,8,0,8"/>
+            <Setter Property="Background" Value="{ThemeResource SystemControlTransparentBrush}"/>
+        </Style>
+        <Style x:Key="AvailablePlaylistsButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style x:Key="AvailablePlaylistsButtonText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+        </Style>
+        <Style x:Key="TransportPanel" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="RelativePanel.AlignBottomWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignLeftWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignRightWithPanel" Value="True"/>
+        </Style>
+        <Style x:Key="TransportImage" TargetType="Image">
+            <Setter Property="Height" Value="48"/>
+        </Style>
+        <Style x:Key="TransportPlayingText" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+
+
+
+    <RelativePanel x:ConnectionId='2' Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark" AllowDrop="True"                                                  >
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:ConnectionId='3' x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="PlaylistHeaderAndImageContainer.Padding" Value="0,0,0,14"/>
+                        <Setter Target="PlaylistHeaderAndImageContainer.(RelativePanel.AlignLeftWithPanel)" Value="True"/>
+                        <Setter Target="PlaylistHeaderAndImageContainer.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+
+                        <Setter Target="CoverImage.Width" Value="275"/>
+                        <Setter Target="CoverImageDefault.Width" Value="275"/>
+
+                        <Setter Target="NowPlayingTitle.MaxWidth" Value="275"/>
+                        <Setter Target="NowPlayingTitle.FontSize" Value="17"/>
+
+                        <Setter Target="PlaylistView.(RelativePanel.AlignLeftWithPanel)" Value="True"/>
+                        <Setter Target="PlaylistView.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="PlaylistView.(RelativePanel.Below)" Value="PlaylistHeaderAndImageContainer"/>
+
+                        <Setter Target="TransportTitle.Visibility" Value="Collapsed"/>
+                        <Setter Target="TransportArtist.Visibility" Value="Collapsed"/>
+                        <Setter Target="TransportAlbum.Visibility" Value="Collapsed"/>
+                        <Setter Target="TransportAlbumDivider.Visibility" Value="Collapsed"/>
+                        <Setter Target="TransportTitleDivider.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='4' x:Name="MediumNarrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="560"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="PlaylistHeaderAndImageContainer.Padding" Value="0,0,0,14"/>
+                        <Setter Target="PlaylistHeaderAndImageContainer.(RelativePanel.AlignLeftWithPanel)" Value="True"/>
+                        <Setter Target="PlaylistHeaderAndImageContainer.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        
+                        <Setter Target="CoverImage.Width" Value="300"/>
+                        <Setter Target="CoverImageDefault.Width" Value="300"/>
+
+                        <Setter Target="NowPlayingTitle.MaxWidth" Value="300"/>
+
+                        <Setter Target="PlaylistView.(RelativePanel.AlignLeftWithPanel)" Value="True"/>
+                        <Setter Target="PlaylistView.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="PlaylistView.(RelativePanel.Below)" Value="PlaylistHeaderAndImageContainer"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='5' x:Name="Medium">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="CoverImage.Width" Value="375"/>
+                        <Setter Target="CoverImageDefault.Width" Value="375"/>
+                        
+                        <Setter Target="NowPlayingTitle.MaxWidth" Value="375"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='6' x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1200"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="CoverImage.Width" Value="460"/>
+                        <Setter Target="CoverImageDefault.Width" Value="460"/>
+                        
+                        <Setter Target="NowPlayingTitle.MaxWidth" Value="460"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <ProgressBar x:ConnectionId='7' IsIndeterminate="True"                                                                                                                                                        Foreground="{ThemeResource ProgressBarIndeterminateForegroundThemeBrush}" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
+        
+        <!-- Cover Image and Now Playing info -->
+        <RelativePanel x:ConnectionId='8' x:Name="PlaylistContainer" Style="{StaticResource PlaylistPanel}">
+
+            <Grid x:ConnectionId='44' x:Name="PlaylistHeaderAndImageContainer"  Style="{StaticResource NowPlayingPanel}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image x:ConnectionId='53' x:Name="CoverImage"                                                                                                                                                                      Style="{StaticResource CoverImageStyle}" Grid.Row="0"/>
+                    <Image x:ConnectionId='54' x:Name="CoverImageDefault" Source="/Assets/Default-Cover.png"                                                                                                                                              Style="{StaticResource CoverImageStyle}" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='55' x:Name="NowPlayingTitle"                                                      FontSize="18" FontWeight="Medium" HorizontalAlignment="Center"                                                                                                               Grid.Row="1"
+/>
+                    <StackPanel x:ConnectionId='56' Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center" MaxWidth="375"                                                                                                               Grid.Row="2">
+                        <TextBlock x:ConnectionId='57'                                                      Style="{StaticResource NowPlayingDetail}"/>
+                        <TextBlock Text="|" Style="{StaticResource NowPlayingDetail}"/>
+                        <TextBlock x:ConnectionId='58'                                                       Style="{StaticResource NowPlayingDetail}"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <!-- Playlist -->
+            <ListView x:ConnectionId='45' x:Name="PlaylistView"                                                                                                                                                                                                                                                                                                                                                                                               Style="{StaticResource PlaylistListView}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.Resources>
+                    <MenuFlyout x:ConnectionId='46' x:Name="RemoveItemFlyout">
+                        <MenuFlyout.Items>
+                            <MenuFlyoutItem x:ConnectionId='47' x:Name="Remove" Text="Remove"                                  />
+                        </MenuFlyout.Items>
+                    </MenuFlyout>
+                </ListView.Resources>
+                <ListView.ItemTemplate>
+                    <DataTemplate                                >
+                        <Grid x:ConnectionId='49'>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:ConnectionId='50'                       Grid.Row="0" FontWeight="Medium"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Spacing="8">
+                                <TextBlock x:ConnectionId='51'                       Style="{StaticResource PlaylistItemDetail}"/>
+                                <TextBlock Text="|" Style="{StaticResource PlaylistItemDetail}"/>
+                                <TextBlock x:ConnectionId='52'                        Style="{StaticResource PlaylistItemDetail}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativePanel>
+
+        <!-- File and Playlist Menu -->
+        <SplitView x:ConnectionId='9' x:Name="FileCommand"                                                                                      Style="{StaticResource FileMenuView}">
+
+            <SplitView.Pane>
+                <Grid Background="{ThemeResource SystemControlBackgroundBaseLowBrush}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="52"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0">
+                        <AppBarButton x:ConnectionId='39' x:Name="OpenPlaylistButton" Icon="MusicInfo" Label="Playlists"                                     Visibility="{Binding Path=SavedPlaylists, Converter={StaticResource EmptyCollectionToHiddenConverter}, Mode=OneWay}"                                                                                                   AccessKey="L" ToolTipService.ToolTip="Show Playlists" Style="{StaticResource FileMenuItem}"/>
+                        <AppBarButton x:ConnectionId='40' x:Name="AddFilesButton"                           Icon="OpenFile" Label="Add File(s)" AccessKey="O" ToolTipService.ToolTip="Add File(s)" Style="{StaticResource FileMenuItem}"/>
+                        <AppBarButton x:ConnectionId='41' x:Name="AddFolderButton"                            Icon="Folder" Label="Add Folder" AccessKey="F" ToolTipService.ToolTip="Add Folder" Style="{StaticResource FileMenuItem}"/>
+                        <AppBarButton x:ConnectionId='42' x:Name="SavePlaylistButton"                                 Icon="Save" Label="Save" AccessKey="S"                                                                                                   ToolTipService.ToolTip="Save Playlist" Style="{StaticResource FileMenuItem}"/>
+                        <AppBarButton x:ConnectionId='43' x:Name="ClearPlaylistButton"                                Icon="Delete" Label="Clear" AccessKey="Delete"                                                                                                   ToolTipService.ToolTip="Clear Playlist" Style="{StaticResource FileMenuItem}"/>
+                    </StackPanel>
+                    <ListBox x:ConnectionId='33' x:Name="PlaylistMenu" Height="{Binding ElementName=FileCommand, Path=ActualHeight}" ScrollViewer.VerticalScrollMode="Auto"                                                    Grid.Column="1">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                                <Setter Property="Padding" Value="0"></Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate                                     >
+                                <Grid x:ConnectionId='35'                                                                   Style="{StaticResource AvailablePlaylistsItem}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock x:ConnectionId='36'                                   Grid.Column="0" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                        <Button x:ConnectionId='37'                                                                                             ToolTipService.ToolTip="Add this playlist to the current one"                                Style="{StaticResource AvailablePlaylistsButton}">
+                                            <TextBlock Text="&#xE710;" Style="{StaticResource AvailablePlaylistsButtonText}"/>
+                                        </Button>
+                                        <Button x:ConnectionId='38'                                                                                             ToolTipService.ToolTip="Delete this playlist from disk"                         Style="{StaticResource AvailablePlaylistsButton}">
+                                            <TextBlock Text="&#xE74D;" Style="{StaticResource AvailablePlaylistsButtonText}"/>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </SplitView.Pane>
+        </SplitView>
+
+        <!-- Content Dialogs for Saving and Deleting -->
+        <ContentDialog x:ConnectionId='10' x:Name="SavePlaylistDialog" PrimaryButtonText="Save"                                                         CloseButtonText="Cancel"                                            DefaultButton="Primary" IsEnabled="True" Visibility="Visible" Title="Save Playlist">
+            <StackPanel>
+                <TextBox x:ConnectionId='31' x:Name="SavePlaylistName"                                                                                                                              />
+
+                <TextBlock x:ConnectionId='32' x:Name="NameTakenError" Text="Name already taken."                                                                                                           />
+            </StackPanel>
+        </ContentDialog>
+
+        <ContentDialog x:ConnectionId='11' x:Name="ConfirmDeleteDialog" PrimaryButtonText="Ok" IsPrimaryButtonEnabled="True" CloseButtonText="Cancel"                                             Title="Confirm Delete">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Are you sure you want to delete" Margin="0,0,5,0"/>
+                <TextBlock x:ConnectionId='30'                                               />
+                <TextBlock Text="?"/>
+            </StackPanel>
+        </ContentDialog>
+
+        <!-- Player Transport Controls -->
+        <StackPanel x:ConnectionId='12' x:Name="Transport" Style="{StaticResource TransportPanel}">
+            
+            <ProgressBar x:ConnectionId='13' x:Name="PlayProgressBar"                                                                                                                                                        Minimum="0" Maximum="100"                                                   Background="{ThemeResource SystemControlBackgroundBaseMediumHighBrush }" Foreground="OrangeRed" />
+            
+            <Grid x:ConnectionId='14' Height="48" VerticalAlignment="Stretch" x:Name="TransportControls" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" ColumnSpacing="12">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:ConnectionId='23' x:Name="TransportCoverImage"                                                        Grid.Column="0" Style="{StaticResource TransportImage}"/>
+                    <Image x:ConnectionId='24' x:Name="TransportCoverDefault" Source="/Assets/Default-Cover.png"                                                                                                                                              Style="{StaticResource TransportImage}" Grid.Row="0"/>
+                    <TextBlock x:ConnectionId='25' x:Name="TransportTitle"                                                      Grid.Column="1" Style="{StaticResource TransportPlayingText}"/>
+                    <SymbolIcon x:ConnectionId='26' x:Name="TransportTitleDivider" Symbol="OutlineStar" Grid.Column="2"/>
+                    <TextBlock x:ConnectionId='27' x:Name="TransportAlbum"                                                      Grid.Column="3" Style="{StaticResource TransportPlayingText}"/>
+                    <SymbolIcon x:ConnectionId='28' x:Name="TransportAlbumDivider" Symbol="OutlineStar" Grid.Column="4"/>
+                    <TextBlock x:ConnectionId='29' x:Name="TransportArtist"                                                       Grid.Column="5" Style="{StaticResource TransportPlayingText}"/>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                    <AppBarButton x:ConnectionId='15'                     Icon="Previous" LabelPosition="Collapsed" Label="Previous">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Shift" Key="Left" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarButton x:ConnectionId='16'                                  LabelPosition="Collapsed" Label="Play"                                                                                                     >
+                        <StackPanel>
+                            <ProgressRing x:ConnectionId='21'                                                                                                                                                            />
+                            <SymbolIcon x:ConnectionId='22'                                                                                                                                                                                                                        />
+                        </StackPanel>
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="None" Key="Space" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarButton x:ConnectionId='17'                     Icon="Next" LabelPosition="Collapsed" Label="Next">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Shift"  Key="Right" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarSeparator/>
+                    <AppBarButton x:ConnectionId='18'                                Icon="Shuffle" LabelPosition="Collapsed" Label="Shuffle"                                                                                                           >
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Shift" Key="S" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarButton x:ConnectionId='19'                                   LabelPosition="Collapsed" Label="Repeat Mode"                                                                                                         >
+                        <SymbolIcon x:ConnectionId='20'                                                                                                         />
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Shift" Key="R" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+    </RelativePanel>
+
+</Page>
+
