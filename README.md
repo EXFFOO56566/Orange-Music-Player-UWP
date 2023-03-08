@@ -1,8 +1,7 @@
 # Orange-Music-Player-UWP
 Orange Music Player Universal Windows Platform
 
-<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
-<ms-store-badge
-	productid="9PHKNHJXTBM0"
-	window-mode="full">
-</ms-store-badge>
+<!-- display an HTML-only app badge. Useful when you can't execute JS, such as in Github markdown pages -->
+<a href="ms-windows-store://pdp/?ProductId=9PHKNHJXTBM0&mode=mini">
+   <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download Discord" />
+</a>
